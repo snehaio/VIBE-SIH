@@ -1,20 +1,28 @@
-import React from 'react';
+import { Component } from "react";
+import "./Navbar.css";
+import { MenuItems } from "./MenuItems";
 
-const Navbar = () => {
-  return (
-    <nav className="flex justify-between items-center p-6">
-      <div className="text-white text-2xl font-bold">V.I.B.E.</div>
-      <div className="space-x-6 text-white">
-        <a href="#" className="hover:text-gray-300">Home</a>
-        <a href="#" className="hover:text-gray-300">About Us</a>
-        <a href="#" className="hover:text-gray-300">Destinations</a>
-        <a href="#" className="hover:text-gray-300">Packages</a>
-        <a href="#" className="hover:text-gray-300">Blog</a>
-        <a href="#" className="hover:text-gray-300">Contact</a>
-      </div>
-      <button className="bg-gray-700 text-white px-4 py-2 rounded-full hover:bg-gray-600">Book Now</button>
-    </nav>
-  );
+class Navbar extends Component {
+  render() {
+    return (
+      <nav className="NavbarItems">
+        <h1 className="navbar-logo">V.I.B.E.</h1>
+        <ul className="nav-menu">
+          {MenuItems.map((item, index) => {
+            return (
+              <li key={index}>
+                <a className={item.cName} href="/">
+                  <i className={item.title}></i>
+                  {item.title}
+                </a>
+              </li>
+            );
+          })}
+        </ul>
+      </nav>
+    );
+  }
 }
 
 export default Navbar;
+
