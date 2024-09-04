@@ -9,12 +9,22 @@
     border-radius: 13px;
     background-color: rgba(255, 255, 255, 0);
   }
-  .navbar-logo {
-    color: rgb(72, 207, 203);
-    font-size: 2rem;
-    cursor: pointer;
-    font-weight: 600;
+  .navbar-logo-container {
+    text-align: center; /* Center-aligns the logo and full form */
   }
+  
+  .navbar-logo {
+    color: rgb(72, 207, 203); /* Logo color */
+    font-size: 2rem; /* Logo font size */
+    cursor: pointer; /* Makes the logo clickable */
+    font-weight: 600; /* Bold weight */
+  }
+  
+  .navbar-fullform {
+    font-size: 1rem; /* Font size for the full form */
+    color: rgb(255, 255, 255); /* Color for the full form text */
+  }
+  
   .nav-menu {
     display: grid;
     grid-template-columns: repeat(7, auto);

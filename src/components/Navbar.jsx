@@ -6,7 +6,11 @@ class Navbar extends Component {
   render() {
     return (
       <nav className="NavbarItems">
+        <div className="navbar-logo-container">
+
         <h1 className="navbar-logo">V.I.B.E.</h1>
+        <p className="navbar-fullform">Vacation Itinerary based on emotions</p>
+        </div>
         <ul className="nav-menu">
           {MenuItems.map((item, index) => {
             return (
