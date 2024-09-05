@@ -12,6 +12,7 @@ const HeroSection = () => {
   const [dateRange, setDateRange] = useState('');
   const [company, setCompany] = useState('');
   const [budget, setBudget] = useState('');
+  const [tripType, setTripType] = useState('Round-Trip');
   const [recommendations, setRecommendations] = useState([]);
 
   const datePickerRef = useRef(null);
@@ -37,6 +38,7 @@ const HeroSection = () => {
       dateRange,
       company,
       budget,
+      tripType,
     };
 
     // Send data to backend (replace 'api-endpoint-url' with your actual API)
@@ -119,6 +121,15 @@ const HeroSection = () => {
           <option value="Family">Family</option>
           <option value="Friends">Friends</option>
           <option value="Solo">Solo</option>
+          <option value="Couple">Couple</option>
+        </select>
+        <select
+          className="px-4 py-2 rounded-lg bg-white bg-opacity-80 text-gray-700"
+          value={tripType}
+          onChange={(e) => setTripType(e.target.value)}
+        >
+          <option value="Round-Trip">Round-Trip</option>
+          <option value="One-Way">One-Way</option>
         </select>
 
         <input
