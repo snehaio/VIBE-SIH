@@ -1,42 +1,51 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  overflow: hidden;
+  overflow-x: hidden; 
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+h1 {
+  max-width: 50vw;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+button:hover {
+  scale: 1.1;
+} */
+#main{
+  position: relative;
+  overflow: hidden;
+  background-color: #1137ca;
 }
 
-.card {
-  padding: 2em;
+#page1{
+    height: 100vh;
+    width: 100vw;
+    position: relative;
 }
-
-.read-the-docs {
-  color: #888;
+#cardsPage{
+  display: flex;
+  align-items: start;
+  font-family: a;
+  justify-content: center;
+  flex-direction: column;
+  height: 200vh;
+  width: 100vw;
+  position: relative;
+  padding-left: 10vw;
+  padding-right: 10vw;
+  color: #fff;
+  background: url(https://r4.wallpaperflare.com/wallpaper/923/524/16/luxury-hotel-swimming-pool-sunset-4k-wallpaper-82ed46f4098305d31a3c5820741b19b7.jpg);
+  background-size: cover;
+  background-position: center;
 }
