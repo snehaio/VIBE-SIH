@@ -11,7 +11,7 @@ export const MenuItems = [
     },
     {
       title: "Packages",
-      url: "/packages",
+      url: "#cardsPage",
       cName: "nav-links",
     },
     {

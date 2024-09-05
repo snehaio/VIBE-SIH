@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import "./card.css";
 
-const TravelCard = ({ title, description, image, badges }) => {
+const TravelCard = ({ title, description, image, badges, budget }) => {
   return (
     <motion.div 
       className="card bg-base-100 w-96 shadow-xl"
@@ -17,6 +17,7 @@ const TravelCard = ({ title, description, image, badges }) => {
           <div className="badge badge-secondary">NEW</div>
         </h2>
         <p>{description}</p>
+        <p>{budget}</p>
         <div className="card-actions justify-end">
           {badges.map((badge, index) => (
             <div key={index} className="badge badge-outline">{badge}</div>
