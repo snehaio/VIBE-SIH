@@ -61,9 +61,10 @@ const HeroSection = () => {
   return (
     <div className="flex flex-col items-center justify-center h-screen text-center text-white">
       <motion.h1
-        className="text-5xl font-bold mb-4"
+        className="text-5xl font-bold mb-4 rounded-sm bg-black/20 h-28 italic"
         style={{ position: 'relative', top: '-20px' }}
         whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}
+        transition={{duration:0.3}}
       >
         Let Your <span style={{ color: 'aqua' }}>Feelings</span> Choose Your Next <span style={{ color: 'aqua' }}>Adventure!</span>
       </motion.h1>

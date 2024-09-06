@@ -1,0 +1,19 @@
+#ScrollUp{
+    position: absolute;
+    height: 5vw;
+    width: 3vw;
+    background-color: rgba(0, 0, 0, 0.389);
+    right: 10vh;
+    top: 10vh;
+    border-radius: 20px;
+    transition: background-color 100ms linear;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+#ScrollUp:hover{
+    background-color: rgba(0, 0, 0, 0.871);
+    transition: background-color 100ms linear;
+}

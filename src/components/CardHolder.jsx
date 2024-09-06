@@ -6,58 +6,33 @@ const CardHolder = () => {
   const cardsData = [
     {
       title: "Mountain Hiking",
-      description: "Manali : Let Your Jawani Go Deewani",
-      image: "https://img.traveltriangle.com/blog/wp-content/uploads/2020/03/1024px-Manali_himachal-400x229.jpg",
-      
-      badges: ["Adventure", "Treaking", "Friends"],
-      budget: "Average budget: INR 4000"
-      
+      description: "Experience the thrill of hiking up the mountains with a breathtaking view.",
+      image: "https://img.freepik.com/premium-photo/perfect-beach-sunset-relaxation-pool-luxurious-beachfront-hotel-resort-sunset-light-perfect_663265-2683.jpg",
+      badges: ["Adventure", "Outdoors"]
     },
     {
       title: "Beach Resort",
-      description: "Goa : Because- Dil Chahta Hai",
-      image: "https://www.travlics.com/blog/wp-content/uploads/2019/08/Beaches-in-Goa.jpg",
-      badges: ["Party", "Relaxation"],
-      budget: "Average budget: INR 15000"
-
+      description: "Relax and unwind at a luxurious beach resort with sunny skies and clear waters.",
+      image: "https://img.freepik.com/premium-photo/perfect-beach-sunset-relaxation-pool-luxurious-beachfront-hotel-resort-sunset-light-perfect_663265-2683.jpg",
+      badges: ["Relaxation", "Luxury"]
     },
     {
-      title: "Sheer bliss during monsoon",
-      description: "Just ask them - Aati kya Khandala",
-      image: "https://img.traveltriangle.com/blog/wp-content/uploads/2020/03/Khandala_ghat_during_rains-400x229.jpg",
-      badges: ["Culture (Cave visits)", "Boating"],
-      budget: "Average budget: INR 10000"
+      title: "City Tour",
+      description: "Discover the cultural gems and historic sites in a guided city tour.",
+      image: "https://img.freepik.com/premium-photo/perfect-beach-sunset-relaxation-pool-luxurious-beachfront-hotel-resort-sunset-light-perfect_663265-2683.jpg",
+      badges: ["Culture", "History"]
     },
     {
       title: "Safari Adventure",
       description: "Explore the wild with an adventurous safari through vast landscapes.",
-      image: "https://assets.traveltriangle.com/blog/wp-content/uploads/2020/03/shutterstock_1162389244.jpg",
-      badges: ["Wildlife", "Adventure"],
-       budget: "Average budget: INR 5000"
-    },
-    {
-      title: "Mata VaishnoDevi",
-      description: "Get Spiritiual in the holy city of Katra, on the slopes of Trikuta Hills",
-      image: "https://images.mid-day.com/images/images/2022/aug/vaishnodevi-PTI-file_d.jpg",
-      badges: ["Religious", "Family"],
-       budget: "Average budget: INR 8000"
+      image: "https://img.freepik.com/premium-photo/perfect-beach-sunset-relaxation-pool-luxurious-beachfront-hotel-resort-sunset-light-perfect_663265-2683.jpg",
+      badges: ["Wildlife", "Adventure"]
     },
     // Add more cards as needed
   ];
 
   return (
     <div id="cardsPage" className="p-10">
-   
-    <div className="flex flex-col items-center mb-10">
-      <h2 className="text-4xl font-bold text-white ">
-        Confused..? <span style={{ color: 'aqua' }}>Explore our latest packages! </span>
-      </h2>
-      
-      <div className="mt-2 w-full flex justify-left">
-        <div className="border-b-4 border-aqua w-40"></div>
-      </div>
-    </div>
-    
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {cardsData.map((card, index) => (
           <TravelCard 
@@ -66,12 +41,10 @@ const CardHolder = () => {
             description={card.description}
             image={card.image}
             badges={card.badges}
-            budget={card.budget}
           />
         ))}
       </div>
     </div>
-   
   );
 }
 
