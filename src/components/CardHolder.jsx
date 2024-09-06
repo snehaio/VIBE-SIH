@@ -3,6 +3,7 @@ import React from 'react';
 import TravelCard from './Cards/TravelCard';
 
 const CardHolder = () => {
+
   const cardsData = [
     {
       title: "Mountain Hiking",
