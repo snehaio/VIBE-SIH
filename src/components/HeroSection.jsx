@@ -3,6 +3,7 @@
 // import flatpickr from 'flatpickr';
 // import 'flatpickr/dist/flatpickr.css';  // Import the Flatpickr CSS
 // import { motion } from 'framer-motion';
+// import Select from 'react-select';
 
 // const HeroSection = () => {
 //   // State variables to manage input data
@@ -68,7 +69,6 @@
 //       </div>
       
 //       <div className="bg-white bg-opacity-20 p-6 rounded-lg shadow-lg flex space-x-4">
-//         {/* Remove Destination Field */}
         
 //         <select
 //           className="px-4 py-2 rounded-lg bg-white bg-opacity-80 text-gray-700"
@@ -152,43 +152,60 @@
 // export default HeroSection;
 
 import React, { useState, useEffect, useRef } from 'react';
-import axios from 'axios'; // Import axios
+import axios from 'axios';
 import flatpickr from 'flatpickr';
-import 'flatpickr/dist/flatpickr.css';  // Import the Flatpickr CSS
+import 'flatpickr/dist/flatpickr.css';  
 import { motion } from 'framer-motion';
+import Select from 'react-select';  // Import react-select
 
 const HeroSection = () => {
   // State variables to manage input data
   const [feeling, setFeeling] = useState('');
-  const [moods, setMoods] = useState(['']);  // Array to hold multiple mood inputs
-  const [newMood, setNewMood] = useState(''); // State for new custom mood input
+  const [moods, setMoods] = useState([]);  // Array to hold multiple mood inputs as tags
   const [dateRange, setDateRange] = useState('');
   const [company, setCompany] = useState('');
   const [budget, setBudget] = useState('');
   const [tripType, setTripType] = useState('Round-Trip');
   const [recommendations, setRecommendations] = useState([]);
-  const [errorMessage, setErrorMessage] = useState('');  // To handle error messages
+  const [errorMessage, setErrorMessage] = useState('');
 
   const datePickerRef = useRef(null);
 
   useEffect(() => {
-    // Initialize Flatpickr with date range selection
     flatpickr(datePickerRef.current, {
       mode: 'range',
       dateFormat: 'Y-m-d',
       onChange: (selectedDates) => {
-        // Capture the selected date range
         setDateRange(selectedDates.map(date => date.toISOString().slice(0, 10)).join(' to '));
       },
     });
   }, []);
 
+  const moodOptions = [
+    { value: 'Adventurous', label: 'Adventurous' },
+    { value: 'Religious', label: 'Religious' },
+    { value: 'Solace', label: 'Solace' },
+    { value: 'Relaxed', label: 'Relaxed' },
+    { value: 'Romantic', label: 'Romantic' },
+  ];
+
+  const customStyles = {
+    menu: (provided) => ({
+      ...provided,
+      maxHeight: 150,  // Limit the dropdown height
+      overflowY: 'auto',  // Enable vertical scrolling
+    }),
+    control: (provided) => ({
+      ...provided,
+      minHeight: '40px',  // Adjust height for the control element (optional)
+    }),
+  };
   // Function to handle form submission and send data to backend API
   const handleSearch = async () => {
     try {
       const requestData = {
         feeling,
-        moods,  // Send all mood values
+        moods: moods.map(mood => mood.value),  // Send selected mood values
         dateRange,
         company,
         budget,
@@ -201,31 +218,6 @@ const HeroSection = () => {
     } catch (e) {
       console.error('Error fetching recommendations:', e);
       setErrorMessage('Failed to fetch recommendations. Please try again.');
-    }
-  };
-
-  // Function to add a new mood input field
-  const addMoodInput = () => {
-    setMoods([...moods, '']);
-  };
-
-  // Function to remove a mood input field
-  const removeMoodInput = (index) => {
-    setMoods(moods.filter((_, i) => i !== index));
-  };
-
-  // Function to handle mood input changes
-  const handleMoodChange = (index, value) => {
-    const newMoods = [...moods];
-    newMoods[index] = value;
-    setMoods(newMoods);
-  };
-
-  // Function to handle the addition of custom mood
-  const handleAddCustomMood = () => {
-    if (newMood.trim() !== '') {
-      setMoods([...moods, newMood.trim()]);
-      setNewMood('');
     }
   };
 
@@ -255,49 +247,17 @@ const HeroSection = () => {
         <i className="fas fa-search absolute top-3 right-4 text-gray-500"></i>
       </div>
       
-      <div className="bg-white bg-opacity-20 p-6 rounded-lg shadow-lg flex flex-col space-y-4">
-        <div className="flex flex-wrap gap-2 mb-4">
-          {moods.map((mood, index) => (
-            <div key={index} className="flex items-center space-x-2">
-              <input
-                type="text"
-                placeholder="Mood"
-                className="px-4 py-2 rounded-lg bg-white bg-opacity-80 text-gray-700"
-                value={mood}
-                onChange={(e) => handleMoodChange(index, e.target.value)}
-              />
-              {moods.length > 1 && (
-                <button
-                  className="bg-red-500 text-white px-2 py-1 rounded"
-                  onClick={() => removeMoodInput(index)}
-                >
-                  Remove
-                </button>
-              )}
-            </div>
-          ))}
-        </div>
-        <button
-          className="bg-green-500 text-white px-4 py-2 rounded-lg"
-          onClick={addMoodInput}
-        >
-          Add Mood
-        </button>
-        <div className="flex items-center space-x-2">
-          <input
-            type="text"
-            placeholder="Add custom mood..."
-            className="px-4 py-2 rounded-lg bg-white bg-opacity-80 text-gray-700"
-            value={newMood}
-            onChange={(e) => setNewMood(e.target.value)}
-          />
-          <button
-            className="bg-blue-500 text-white px-4 py-2 rounded-lg"
-            onClick={handleAddCustomMood}
-          >
-            Add Custom Mood
-          </button>
-        </div>
+      <div className="bg-white bg-opacity-20 p-6 rounded-lg shadow-lg flex space-x-4">
+        <Select
+          isMulti
+          options={moodOptions}  // Predefined mood options
+          className="basic-multi-select text-black bg-white"
+          classNamePrefix="select"
+          placeholder="Select your mood(s)..."
+          value={moods}
+          onChange={(selectedMoods) => setMoods(selectedMoods)}  // Update moods state
+          isClearable={true}  // Allows user to clear selections
+        />
 
         <input
           ref={datePickerRef}
@@ -366,3 +326,5 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
+
+
