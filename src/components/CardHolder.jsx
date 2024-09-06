@@ -6,30 +6,42 @@ const CardHolder = () => {
   const cardsData = [
     {
       title: "Mountain Hiking",
-      description: "Experience the thrill of hiking up the mountains with a breathtaking view.",
-      image: "https://img.freepik.com/premium-photo/perfect-beach-sunset-relaxation-pool-luxurious-beachfront-hotel-resort-sunset-light-perfect_663265-2683.jpg",
-      badges: ["Adventure", "Outdoors"]
+      description: "Manali : Let Your Jawani Go Deewani",
+      image: "https://img.traveltriangle.com/blog/wp-content/uploads/2020/03/1024px-Manali_himachal-400x229.jpg",
+      badges: ["Adventure", "Trekking", "Friends"],
+      budget: "Average budget: INR 4000"
     },
     {
       title: "Beach Resort",
-      description: "Relax and unwind at a luxurious beach resort with sunny skies and clear waters.",
-      image: "https://img.freepik.com/premium-photo/perfect-beach-sunset-relaxation-pool-luxurious-beachfront-hotel-resort-sunset-light-perfect_663265-2683.jpg",
-      badges: ["Relaxation", "Luxury"]
+      description: "Goa : Because- Dil Chahta Hai",
+      image: "https://www.travlics.com/blog/wp-content/uploads/2019/08/Beaches-in-Goa.jpg",
+      badges: ["Party", "Relaxation"],
+      budget: "Average budget: INR 15000"
     },
     {
-      title: "City Tour",
-      description: "Discover the cultural gems and historic sites in a guided city tour.",
-      image: "https://img.freepik.com/premium-photo/perfect-beach-sunset-relaxation-pool-luxurious-beachfront-hotel-resort-sunset-light-perfect_663265-2683.jpg",
-      badges: ["Culture", "History"]
+      title: "Sheer bliss during monsoon",
+      description: "Just ask them - Aati kya Khandala",
+      image: "https://img.traveltriangle.com/blog/wp-content/uploads/2020/03/Khandala_ghat_during_rains-400x229.jpg",
+      badges: ["Culture (Cave visits)", "Boating"],
+      budget: "Average budget: INR 10000"
     },
     {
       title: "Safari Adventure",
       description: "Explore the wild with an adventurous safari through vast landscapes.",
-      image: "https://img.freepik.com/premium-photo/perfect-beach-sunset-relaxation-pool-luxurious-beachfront-hotel-resort-sunset-light-perfect_663265-2683.jpg",
-      badges: ["Wildlife", "Adventure"]
+      image: "https://assets.traveltriangle.com/blog/wp-content/uploads/2020/03/shutterstock_1162389244.jpg",
+      badges: ["Wildlife", "Adventure"],
+      budget: "Average budget: INR 5000"
+    },
+    {
+      title: "Mata VaishnoDevi",
+      description: "Get Spiritual in the holy city of Katra, on the slopes of Trikuta Hills",
+      image: "https://images.mid-day.com/images/images/2022/aug/vaishnodevi-PTI-file_d.jpg",
+      badges: ["Religious", "Family"],
+      budget: "Average budget: INR 8000"
     },
     // Add more cards as needed
   ];
+
 
   return (
     <div id="cardsPage" className="p-10">
