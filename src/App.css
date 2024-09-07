@@ -45,7 +45,7 @@ h1 {
   padding-left: 10vw;
   padding-right: 10vw;
   color: #fff;
-  background: url(https://img.freepik.com/free-photo/closeup-plant_181624-3826.jpg?t=st=1725623759~exp=1725627359~hmac=1f82dfc071bc0e63d680145ef2cf522ff52e36cc9baf5905848f098f5ad0c989&w=996);
+  background: url(src/assets/img2.jpg);
   background-size: cover;
   background-position: center;
 }
@@ -59,4 +59,8 @@ h1 {
   z-index: 9;
   pointer-events: none;
   transform: translate(-50%, -30%);
+}
+
+#cardsPage #h1{
+  font-size: 50px;
 }

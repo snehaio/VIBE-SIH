@@ -1,3 +1,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: 'customF';
+    src: url('./fonts/Raleway-Bold.woff') format('woff'),
+         url('./fonts/Raleway-Bold.ttf') format('truetype');
+  }
+  
+  
+  *{
+    font-family: 'customF', sans-serif;
+  }
+
+.NavbarItems{
+    width: 100vw;
+    position: relative;
+    z-index: 99;
+}

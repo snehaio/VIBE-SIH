@@ -5,6 +5,7 @@ import flatpickr from 'flatpickr';
 import 'flatpickr/dist/flatpickr.css';  
 import { motion } from 'framer-motion';
 import Select from 'react-select';  // Import react-select
+import BookNow from './Booking/BookNow';
 
 const HeroSection = () => {
   // State variables to manage input data
@@ -18,6 +19,8 @@ const HeroSection = () => {
   const [errorMessage, setErrorMessage] = useState('');
 
   const datePickerRef = useRef(null);
+
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
 
   useEffect(() => {
     flatpickr(datePickerRef.current, {
@@ -146,10 +149,11 @@ const HeroSection = () => {
         
         <button
           className="bg-gray-700 text-white px-4 py-2 rounded-lg hover:bg-gray-600"
-          onClick={handleSearch}
+          onClick={() => setIsPopupOpen(true) }
         >
           Search
         </button>
+        <BookNow isOpen={isPopupOpen} setIsOpen={setIsPopupOpen} />
       </div>
 
       {/* Display Recommendations */}

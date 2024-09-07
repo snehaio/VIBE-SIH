@@ -46,6 +46,7 @@ const CardHolder = () => {
 
   return (
     <div id="cardsPage" className="p-10">
+      <div id="h1">Confused..? Explore our latest packages</div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {cardsData.map((card, index) => (
           <TravelCard 
