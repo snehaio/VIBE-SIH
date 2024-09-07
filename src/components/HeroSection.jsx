@@ -35,6 +35,8 @@ const HeroSection = () => {
   const moodOptions = [
     { value: 'Adventurous', label: 'Adventurous' },
     { value: 'Religious', label: 'Religious' },
+    { value: 'Exciting', label: 'Exciting' },
+    { value: 'Party', label: 'Party' },
     { value: 'Solace', label: 'Solace' },
     { value: 'Relaxed', label: 'Relaxed' },
     { value: 'Romantic', label: 'Romantic' },
@@ -107,7 +109,8 @@ const HeroSection = () => {
           placeholder="Select your mood(s)..."
           value={moods}
           onChange={(selectedMoods) => setMoods(selectedMoods)}  // Update moods state
-          isClearable={true}  // Allows user to clear selections
+          isClearable={true} 
+          menuPlacement="top" // Allows user to clear selections
         />
 
         <input
