@@ -7,6 +7,8 @@ import loco from './hooks/locoscroll.js';
 import cursorEffect from './hooks/cursorEffect.js';
 import { useEffect } from 'react';
 
+export const base_url = "3.109.1.79:8080"
+export const port_number = ""
 
 const App = () => {
   useEffect(() => {

@@ -6,6 +6,7 @@ import 'flatpickr/dist/flatpickr.css';
 import { motion } from 'framer-motion';
 import Select from 'react-select';  // Import react-select
 import BookNow from './Booking/BookNow';
+import { base_url, port_number } from '../App';
 
 const HeroSection = () => {
   // State variables to manage input data
@@ -14,7 +15,7 @@ const HeroSection = () => {
   const [dateRange, setDateRange] = useState('');
   const [company, setCompany] = useState('');
   const [budget, setBudget] = useState('');
-  const [tripType, setTripType] = useState('Round-Trip');
+  const [roundTrip, setRoundTrip] = useState(true);
   const [recommendations, setRecommendations] = useState([]);
   const [errorMessage, setErrorMessage] = useState('');
 
@@ -55,25 +56,31 @@ const HeroSection = () => {
   };
   // Function to handle form submission and send data to backend API
   const handleSearch = async () => {
+    const dateArr = dateRange.split(" ");
+    let startDate = dateArr[0];
+    let endDate = dateArr[2];
+  
     try {
       const requestData = {
-        feeling,
-        moods: moods.map(mood => mood.value),  // Send selected mood values
-        dateRange,
+        moods, 
+        startDate,
+        endDate,
         company,
         budget,
-        tripType,
+        roundTrip,
       };
-
-      const resp = await axios.post('http://3.109.1.79:8080/api/user/mood/destination', requestData);
+      
+      console.log(requestData);
+      const resp = await axios.post(`http://${base_url}/api/user/mood/destination`, requestData);
       console.log(resp);
       setRecommendations(resp.data || []);
+      setIsPopupOpen(true);
     } catch (e) {
       console.error('Error fetching recommendations:', e);
       setErrorMessage('Failed to fetch recommendations. Please try again.');
     }
   };
-
+  
   return (
     <div className="flex flex-col items-center justify-center h-screen text-center text-white">
       <motion.h1
@@ -134,8 +141,8 @@ const HeroSection = () => {
 
         <select
           className="px-4 py-2 rounded-lg bg-white bg-opacity-80 text-gray-700"
-          value={tripType}
-          onChange={(e) => setTripType(e.target.value)}
+          value={roundTrip}
+          onChange={(e) => setRoundTrip(e.target.value)}
         >
           <option value="Round-Trip">Round-Trip</option>
           <option value="One-Way">One-Way</option>
@@ -152,7 +159,7 @@ const HeroSection = () => {
         
         <button
           className="bg-gray-700 text-white px-4 py-2 rounded-lg hover:bg-gray-600"
-          onClick={() => setIsPopupOpen(true) }
+          onClick={() => handleSearch()}
         >
           Search
         </button>
