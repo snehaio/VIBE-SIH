@@ -83,6 +83,7 @@ const DestinationComponent = () => {
   const fetchData = async () => {
     try {
       const resp = await axios.post(`http://${base_url}/api/user/mood/destination`, userData);
+      console.log("backend api resp: ", resp);
       console.log("Resp Data: ", resp.data.data);
       setRecommendatedData(resp.data.data || []);
     } catch (e) {
