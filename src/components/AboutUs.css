@@ -1,0 +1,113 @@
+.about-us {
+    padding: 40px;
+    background-color: #000000;
+    background: url(https://thumbs.wbm.im/pw/medium/cb0726b4381f23d4ec755a328577eba7.avif);
+   background-position: center;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    position: relative;
+  }
+  
+  .about-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .about-us h2 {
+    font-size: 50px;
+    margin-bottom: 20px;
+    color: #ffffff;
+    border-bottom: 5px solid aqua;
+    display: inline-block;
+    
+
+  }
+  
+  .about-us p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #ffffff;
+    line-height: 1.6;
+    background-color: rgb(0, 0, 0, 0.4);
+    border-radius: 20px; /* Rounds the corners */
+    padding: 15px; /* Adds padding inside the paragraph to keep the text away from the edges */
+    border-radius: 10px;
+    
+
+  }
+
+  
+  
+  
+  .about-us ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+  }
+  
+  .about-us ul li {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #ffffff;
+  }
+  
+  .about-us strong {
+    color: teal;
+  }
+  .container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    padding: 20px;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    padding: 20px;
+}
+
+.mission-vision-goals {
+    display: flex;
+    justify-content: center; /* Distributes space between items */
+   gap: 100px;/* Adds space between the boxes */
+    flex-wrap: wrap; /* Allows wrapping if the screen is too small */
+    padding: 20px;
+  }
+  .icon {
+    font-size: 40px; /* Size of the icon */
+    color: teal; /* Color of the icon */
+    display: block; /* Makes the icon a block-level element */
+    margin-bottom: 15px; /* Space between the icon and heading */
+    position: relative;
+  }
+  .content {
+    
+        flex: 1; /* Allow cards to grow equally */
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        max-width: 300px; /* Limit the width of each card */
+        box-sizing: border-box; /* Ensure padding is included in the width */
+        border: 4px solid transparent; /* Set border width and make it transparent initially */
+        border-image: linear-gradient(to right, #12898b, #11d0b7); /* Blue gradient border */
+        border-image-slice: 1; /* Ensure the gradient covers the border area */
+      }
+      
+  
+  .heading {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #ffffff; /* Accent color */
+  }
+  
+  .content {
+    font-size: 16px;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+
+
