@@ -2,74 +2,65 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { base_url } from "../../App";
 import { useNavigate } from "react-router-dom";
+import './Destination.css';
+
 
 const hardCodedData = [
   {
-    id: "paris123",
-    tags: ["adventure", "family", "snow", "hill-station"],
-    rating: 4.7,
-    numberOfRatings: 1250,
+    id: "goa123",
+    tags: ["beach", "adventure", "nightlife", "water-sports"],
+    rating: 4.8,
+    numberOfRatings: 2400,
     image:
-      "https://images.pexels.com/photos/733148/pexels-photo-733148.jpeg?auto=compress&dpr=1",
+      "https://tse4.mm.bing.net/th?id=OIP.Po2sXyaDZC94tPBjJE21wgHaEo&pid=Api&P=0&h=180",
     location: {
-      city: "Paris",
-      state: "Île-de-France",
-      country: "France",
+      city: "Goa",
+      state: "Goa",
+      country: "India",
     },
   },
   {
-    id: "berlin456",
-    tags: ["adventure", "family", "snow", "hill-station"],
-    rating: 4.3,
-    numberOfRatings: 350,
+    id: "shimla456",
+    tags: ["hill-station", "snow", "adventure", "family"],
+    rating: 4.6,
+    numberOfRatings: 1200,
     image:
-      "https://images.pexels.com/photos/733148/pexels-photo-733148.jpeg?auto=compress&dpr=1",
+      "https://tse1.mm.bing.net/th?id=OIP.mN7uAQduKZA_W3tPbqtyQQHaFL&pid=Api&P=0&h=180",
     location: {
-      city: "Berlin",
-      state: "Berlin",
-      country: "Germany",
+      city: "Shimla",
+      state: "Himachal Pradesh",
+      country: "India",
     },
   },
+
   {
-    id: "miami789",
-    tags: ["adventure", "family", "snow", "hill-station"],
-    rating: 4.9,
-    numberOfRatings: 900,
-    image:
-      "https://images.pexels.com/photos/733148/pexels-photo-733148.jpeg?auto=compress&dpr=1",
-    location: {
-      city: "Miami",
-      state: "Florida",
-      country: "USA",
-    },
-  },
-  {
-    id: "amsterdam012",
-    tags: ["adventure", "family", "snow", "hill-station"],
+    id: "jaipur012",
+    tags: ["heritage", "culture", "history", "forts"],
     rating: 4.5,
-    numberOfRatings: 600,
+    numberOfRatings: 1100,
     image:
-      "https://images.pexels.com/photos/733148/pexels-photo-733148.jpeg?auto=compress&dpr=1",
+      "https://tse3.mm.bing.net/th?id=OIP.Paq060V_sg9Y-W-iwWnhdQHaFg&pid=Api&P=0&h=180",
     location: {
-      city: "Amsterdam",
-      state: "North Holland",
-      country: "Netherlands",
+      city: "Jaipur",
+      state: "Rajasthan",
+      country: "India",
     },
   },
   {
-    id: "newyork345",
-    tags: ["adventure", "family", "snow", "hill-station"],
-    rating: 4.2,
-    numberOfRatings: 150,
+    id: "manali345",
+    tags: ["adventure", "snow", "trekking", "hill-station"],
+    rating: 4.7,
+    numberOfRatings: 1600,
     image:
-      "https://images.pexels.com/photos/733148/pexels-photo-733148.jpeg?auto=compress&dpr=1",
+      "https://tse1.mm.bing.net/th?id=OIP.gVWZzjdrWtFD0TfWBIkyXAHaE8&pid=Api&P=0&h=180",
     location: {
-      city: "New York",
-      state: "New York",
-      country: "USA",
+      city: "Manali",
+      state: "Himachal Pradesh",
+      country: "India",
     },
   },
 ];
+
 
 const DestinationComponent = () => {
   const navigate = useNavigate();
@@ -105,43 +96,44 @@ const DestinationComponent = () => {
   }, [userData, navigate]); 
 
   return (
-    <div className="flex justify-center bg-black">
-      <ul>
+    <div id="recommendations">
+       <h2 id="heading" className="text-3xl font-bold mb-5">Personalized Recommendations for you :)</h2>
+       <div className="card-container flex flex-wrap justify-center">
         {recommendedData.map((destination) => (
-          <li key={destination.id}>
-            <DestinationCard data={destination} />
-          </li>
-        ))}
-      </ul>
+           <DestinationCard key={destination.id} data={destination} />
+          ))}
+    </div>
     </div>
   );
 };
 
+
 const DestinationCard = ({ data }) => {
   return (
-    <div className="flex bg-black py-2 basis-1/3 justify-center">
-      <div className="image basis-1/4">
+    <div className="card">
+      <div className="image-container">
         <img
           src={data.image}
           alt={data.location.city}
-          style={{ height: "100px", width: "150px" }} 
+          className="card-image"
         />
       </div>
-      <div className="text-body basis-3/4">
-        <div className="bg-black px-2 flex justify-between">
-          <div>
-            <p>
-              {data.location.country} : {data.location.city}
-            </p>
-          </div>
-          <div>
-            <p>Rating: {data.rating}</p>
-            <p>({data.numberOfRatings} reviews)</p>
-          </div>
+      <div className="card-content">
+        <div className="location-info">
+          <p className="location">{data.location.city}, {data.location.country}</p>
+          <p className="state">{data.location.state}</p>
+        </div>
+        <div className="rating-info">
+          <p className="rating">⭐ {data.rating}</p>
+          <p className="reviews">({data.numberOfRatings} reviews)</p>
+          <div className="know-more">
+        <i className="fas fa-chevron-down"></i> {/* Font Awesome down arrow */}
+      </div>
         </div>
       </div>
     </div>
   );
 };
+
 
 export default DestinationComponent;
