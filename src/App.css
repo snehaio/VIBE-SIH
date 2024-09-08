@@ -46,7 +46,7 @@ h1 {
   padding-left: 10vw;
   padding-right: 10vw;
   color: #fff;
-  background: url(src/assets/img2.jpg);
+  background: url("/src/assets/img2.jpg");
   background-size: cover;
   background-position: center;
 }
