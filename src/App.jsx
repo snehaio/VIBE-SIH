@@ -41,9 +41,9 @@ const App = () => {
           <AboutUs />
           <Testimonials />
         </div>
-        {/* <div id="footSection">
+        <div id="footSection">
           <Foot />
-        </div> */}
+        </div>
       </div>
     </div>
   );
