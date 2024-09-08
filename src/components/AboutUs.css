@@ -1,6 +1,8 @@
 .about-us {
     padding: 40px;
-    background-color: #f4f4f4;
+    background-color: #000000;
+    background: url(https://thumbs.wbm.im/pw/medium/cb0726b4381f23d4ec755a328577eba7.avif);
+   background-position: center;
     font-family: 'Arial', sans-serif;
     text-align: center;
     position: relative;
@@ -14,7 +16,7 @@
   .about-us h2 {
     font-size: 50px;
     margin-bottom: 20px;
-    color: #000000;
+    color: #ffffff;
     border-bottom: 5px solid aqua;
     display: inline-block;
     
@@ -24,11 +26,14 @@
   .about-us p {
     font-size: 18px;
     margin-bottom: 20px;
-    color: #000000;
+    color: #ffffff;
     line-height: 1.6;
-    background-color: rgba(0, 255, 255, 0.1); /* Aqua color with reduced opacity */
+    background-color: rgb(0, 0, 0, 0.4);
     border-radius: 20px; /* Rounds the corners */
     padding: 15px; /* Adds padding inside the paragraph to keep the text away from the edges */
+    border-radius: 10px;
+    
+
   }
 
   
@@ -43,7 +48,7 @@
   .about-us ul li {
     font-size: 18px;
     margin-bottom: 10px;
-    color: #000000;
+    color: #ffffff;
   }
   
   .about-us strong {
@@ -66,7 +71,7 @@
 .mission-vision-goals {
     display: flex;
     justify-content: center; /* Distributes space between items */
-   gap: 30px;/* Adds space between the boxes */
+   gap: 100px;/* Adds space between the boxes */
     flex-wrap: wrap; /* Allows wrapping if the screen is too small */
     padding: 20px;
   }
@@ -78,20 +83,24 @@
     position: relative;
   }
   .content {
-    flex: 1;
-    min-width: 380px; /* Ensures cards have a minimum width */
-    max-width: 300px; /* Optional: max width for responsive design */
-    background-color: rgba(248, 255, 255, 0.1); /* Background color for the boxes */
-    border: 1px solid #ddd; /* Border around the boxes */
-    border-radius: 8px; /* Rounds the corners of the boxes */
-    padding: 20px; /* Padding inside the boxes */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
-  }
+    
+        flex: 1; /* Allow cards to grow equally */
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        max-width: 300px; /* Limit the width of each card */
+        box-sizing: border-box; /* Ensure padding is included in the width */
+        border: 4px solid transparent; /* Set border width and make it transparent initially */
+        border-image: linear-gradient(to right, #12898b, #11d0b7); /* Blue gradient border */
+        border-image-slice: 1; /* Ensure the gradient covers the border area */
+      }
+      
   
   .heading {
     font-size: 24px;
     margin-bottom: 10px;
-    color: #000000; /* Accent color */
+    color: #ffffff; /* Accent color */
   }
   
   .content {
