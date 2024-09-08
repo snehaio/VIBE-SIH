@@ -25,7 +25,7 @@ const variants = {
 
 const BookNow = ({ isOpen, setIsOpen }) => {
   return (
-    <motion.div className="book-now-popup" animate={isOpen ? "open" : "closed"}>
+    <motion.div className={`book-now-popup ${isOpen ? "open" : "closed"}`} animate={isOpen ? "open" : "closed"}>
       <motion.div className="popup-bg" variants={variants}>
         <div className="popup-content">
           <h2>Book Your Trip</h2>
