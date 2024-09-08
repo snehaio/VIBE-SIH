@@ -1,0 +1,69 @@
+#footer {
+    width: 100vw;
+    height: 30vh;
+    background-color: #ffcc99;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 2rem;
+  }
+  
+  .footer-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 1rem;
+  }
+  
+  .logo h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .review-btn {
+    padding: 10px 20px;
+    background-color: #ff4500;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .review-btn:hover {
+    background-color: #ff6347;
+  }
+  
+  .about-us p {
+    text-align: center;
+    max-width: 200px;
+  }
+  
+  .navbar-links ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .navbar-links ul li {
+    margin: 5px 0;
+  }
+  
+  .navbar-links ul li a {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s ease;
+  }
+  
+  .navbar-links ul li a:hover {
+    color: #ff4500;
+  }
+  

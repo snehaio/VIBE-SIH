@@ -6,6 +6,8 @@ import './App.css';
 import loco from './hooks/locoscroll.js';
 import cursorEffect from './hooks/cursorEffect.js';
 import { useEffect } from 'react';
+import Foot from './components/Footer/Foot.jsx';
+
 
 export const base_url = "3.109.1.79:8080"
 export const port_number = ""
@@ -24,8 +26,10 @@ const App = () => {
         <Navbar/>
         <HeroSection />
       </div>
-
-      <CardHolder /> 
+      <CardHolder />
+      <div id='footSection'>
+      <Foot/>
+      </div>
     </div>
   </div>
   );
