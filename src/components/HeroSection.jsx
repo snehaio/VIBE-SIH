@@ -1,12 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
-import axios from "axios";
 import flatpickr from "flatpickr";
 import "flatpickr/dist/flatpickr.css";
 import { motion } from "framer-motion";
 import Select from "react-select"; // Import react-select
 import BookNow from "./Booking/BookNow";
-import { base_url, port_number } from "../App";
-import DestinationComponent from "./Booking/Destination";
 import { useNavigate } from "react-router-dom";
 
 const HeroSection = () => {
@@ -176,20 +173,6 @@ const HeroSection = () => {
         <BookNow isOpen={isPopupOpen} setIsOpen={setIsPopupOpen} />
       </div>
       {errorMessage && <div className="text-red-500 mt-4">{errorMessage}</div>}
-
-      {recommendations.length > 0 && (
-        <div className="mt-8">
-          <h2 className="text-2xl font-bold mb-4">Recommended Places:</h2>
-          <ul>
-            {recommendations.map((rec, index) => (
-              <li key={index} className="bg-white p-4 mb-2 rounded shadow-lg">
-                {rec.name} - {rec.location.city}, {rec.location.state},{" "}
-                {rec.location.country}
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
     </div>
   );
 };
