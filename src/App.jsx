@@ -2,6 +2,8 @@ import React from 'react';
 import Navbar from './components/Navbar';
 import HeroSection from './components/HeroSection';
 import CardHolder from './components/CardHolder'; 
+import AboutUs from './components/AboutUs.jsx';
+import Testimonials from './components/Testimonials.jsx';
 import './App.css'; 
 import loco from './hooks/locoscroll.js';
 import cursorEffect from './hooks/cursorEffect.js';
@@ -26,8 +28,16 @@ const App = () => {
       </div>
 
       <CardHolder /> 
-    </div>
-  </div>
+      <div className="App">
+     
+    
+        <AboutUs />
+      
+        <Testimonials /> 
+      </div>
+      </div>
+      </div>
+  
   );
 }
 

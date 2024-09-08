@@ -1,0 +1,104 @@
+.about-us {
+    padding: 40px;
+    background-color: #f4f4f4;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    position: relative;
+  }
+  
+  .about-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .about-us h2 {
+    font-size: 50px;
+    margin-bottom: 20px;
+    color: #000000;
+    border-bottom: 5px solid aqua;
+    display: inline-block;
+    
+
+  }
+  
+  .about-us p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #000000;
+    line-height: 1.6;
+    background-color: rgba(0, 255, 255, 0.1); /* Aqua color with reduced opacity */
+    border-radius: 20px; /* Rounds the corners */
+    padding: 15px; /* Adds padding inside the paragraph to keep the text away from the edges */
+  }
+
+  
+  
+  
+  .about-us ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+  }
+  
+  .about-us ul li {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #000000;
+  }
+  
+  .about-us strong {
+    color: teal;
+  }
+  .container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    padding: 20px;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    padding: 20px;
+}
+
+.mission-vision-goals {
+    display: flex;
+    justify-content: center; /* Distributes space between items */
+   gap: 30px;/* Adds space between the boxes */
+    flex-wrap: wrap; /* Allows wrapping if the screen is too small */
+    padding: 20px;
+  }
+  .icon {
+    font-size: 40px; /* Size of the icon */
+    color: teal; /* Color of the icon */
+    display: block; /* Makes the icon a block-level element */
+    margin-bottom: 15px; /* Space between the icon and heading */
+    position: relative;
+  }
+  .content {
+    flex: 1;
+    min-width: 380px; /* Ensures cards have a minimum width */
+    max-width: 300px; /* Optional: max width for responsive design */
+    background-color: rgba(248, 255, 255, 0.1); /* Background color for the boxes */
+    border: 1px solid #ddd; /* Border around the boxes */
+    border-radius: 8px; /* Rounds the corners of the boxes */
+    padding: 20px; /* Padding inside the boxes */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+  }
+  
+  .heading {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #000000; /* Accent color */
+  }
+  
+  .content {
+    font-size: 16px;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+
+
