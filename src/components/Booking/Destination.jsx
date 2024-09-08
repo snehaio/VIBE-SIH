@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { base_url } from "../../App";
+import { useNavigate } from "react-router-dom";
 
 const data = [
   {
@@ -71,9 +72,13 @@ const data = [
 ];
 
 const DestinationComponent = () => {
+  const navigate = useNavigate()
   const [recommendedData, setRecommendatedData] = useState([]);
   const userData = JSON.parse(localStorage.getItem("LSuserData"));
   console.log("LSuserData ", userData);
+  if(!userData) {
+    navigate("/")
+  }
 
   const fetchData = async () => {
     try {
