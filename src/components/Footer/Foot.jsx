@@ -3,7 +3,7 @@ import './footer.css';
 
 function Foot() {
   return (
-    <div id="footer" className="footer-container">
+    <div id="footerbottm" className="footer-container">
       <div className="footer-section logo">
         <h2>Your Logo</h2>
       </div>
