@@ -3,7 +3,7 @@ import React from "react";
 function Foot() {
   return (
     <footer className="bg-gray-800 text-white p-10 grid grid-cols-1 md:grid-cols-4 gap-10">
-      <nav>
+      {/* <nav>
         <h6 className="text-xl font-semibold mb-4">Services</h6>
         <ul>
           <li><a className="text-sm hover:text-gray-400" href="#">Branding</a></li>
@@ -11,14 +11,14 @@ function Foot() {
           <li><a className="text-sm hover:text-gray-400" href="#">Marketing</a></li>
           <li><a className="text-sm hover:text-gray-400" href="#">Advertisement</a></li>
         </ul>
-      </nav>
+      </nav> */}
 
       <nav>
         <h6 className="text-xl font-semibold mb-4">Company</h6>
         <ul>
           <li><a className="text-sm hover:text-gray-400" href="#">About us</a></li>
           <li><a className="text-sm hover:text-gray-400" href="#">Contact</a></li>
-          <li><a className="text-sm hover:text-gray-400" href="#">Jobs</a></li>
+          {/* <li><a className="text-sm hover:text-gray-400" href="#">Jobs</a></li> */}
           <li><a className="text-sm hover:text-gray-400" href="#">Press kit</a></li>
         </ul>
       </nav>
