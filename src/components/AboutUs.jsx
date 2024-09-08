@@ -4,7 +4,7 @@ import './AboutUs.css'; // Importing styles if you want to add custom styling
 const AboutUs = () => {
     
   return (
-    <section className="about-us">
+    <section id='AboutUS' className="about-us">
   <div className="about-container">
     <h2>About Us</h2>
     <p>
